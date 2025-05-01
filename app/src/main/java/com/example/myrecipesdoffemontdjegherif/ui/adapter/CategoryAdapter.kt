@@ -4,7 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myrecipesdoffemontdjegherif.RecipesActivity
+import com.example.myrecipesdoffemontdjegherif.ui.activity.RecipesActivity
 import com.example.myrecipesdoffemontdjegherif.data.model.Category
 import com.example.myrecipesdoffemontdjegherif.databinding.ItemCategoryBinding
 import com.squareup.picasso.Picasso

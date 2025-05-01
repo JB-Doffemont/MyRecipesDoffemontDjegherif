@@ -15,10 +15,13 @@
         android:theme="@style/Theme.MyRecipesDoffemontDjegherif"
         tools:targetApi="31">
         <activity
-            android:name=".RecipesActivity"
+            android:name=".ui.activity.MealDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activity.RecipesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

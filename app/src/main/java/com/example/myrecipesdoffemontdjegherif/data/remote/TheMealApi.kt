@@ -15,5 +15,8 @@ interface TheMealApi {
         @Query("c") category: String
     ): Call<MealResponse>
 
+    @GET("lookup.php")
+    fun getMealById(@Query("i") id: String): Call<MealResponse>
+
 }
 

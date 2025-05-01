@@ -1,8 +1,10 @@
 package com.example.myrecipesdoffemontdjegherif.ui.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myrecipesdoffemontdjegherif.ui.activity.MealDetailActivity
 import com.example.myrecipesdoffemontdjegherif.data.model.Meal
 import com.example.myrecipesdoffemontdjegherif.databinding.ItemMealBinding
 import com.squareup.picasso.Picasso
@@ -21,6 +23,16 @@ class MealAdapter(private val meals: List<Meal>) :
         val meal = meals[position]
         holder.binding.textMeal.text = meal.strMeal
         Picasso.get().load(meal.strMealThumb).into(holder.binding.imageMeal)
+
+        holder.binding.root.setOnClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(context, MealDetailActivity::class.java)
+
+            // On passe l'id du plat (ou son nom si tu préfères)
+            intent.putExtra("meal_id", meal.idMeal)
+
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int = meals.size
