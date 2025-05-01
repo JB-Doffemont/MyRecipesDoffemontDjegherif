@@ -1,8 +1,10 @@
 package com.example.myrecipesdoffemontdjegherif.ui.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myrecipesdoffemontdjegherif.RecipesActivity
 import com.example.myrecipesdoffemontdjegherif.data.model.Category
 import com.example.myrecipesdoffemontdjegherif.databinding.ItemCategoryBinding
 import com.squareup.picasso.Picasso
@@ -35,6 +37,16 @@ class CategoryAdapter(private val categories: List<Category>) :
         Picasso.get()
             .load(category.strCategoryThumb)
             .into(holder.binding.imageCategory)
+
+        holder.binding.root.setOnClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(context, RecipesActivity::class.java)
+
+            // On passe le nom de la catégorie dans l'Intent
+            intent.putExtra("category_name", category.strCategory)
+
+            context.startActivity(intent)
+        }
     }
 
     // Nombre total d'éléments dans la liste
