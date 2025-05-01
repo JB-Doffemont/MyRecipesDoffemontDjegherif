@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MyRecipesDoffemontDjegherif</string>
+    <string name="category_name">Category name</string>
+
 </resources>

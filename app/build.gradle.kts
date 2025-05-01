@@ -54,6 +54,9 @@ dependencies {
     // OkHttp Logging
     implementation(libs.logging.interceptor)
 
+    //Image
+    implementation(libs.picasso)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
