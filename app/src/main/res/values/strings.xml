@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MyRecipesDoffemontDjegherif</string>
+    <string name="category_name">Category name</string>
+    <string name="recipe_name">Recipe name</string>
+    <string name="recipe_origin">Recipe origin</string>
+    <string name="recipe_instructions">Recipe instructions</string>
+    <string name="recipe_origin_subtitle">Category - Origin</string>
+    <string name="recipe_instructions_subtitle">Instructions</string>
+    <string name="recipe_ingredients_subtitle">Ingredients</string>
 </resources>
