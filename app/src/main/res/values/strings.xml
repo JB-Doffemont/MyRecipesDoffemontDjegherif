@@ -7,4 +7,12 @@
     <string name="recipe_origin_subtitle">Category - Origin</string>
     <string name="recipe_instructions_subtitle">Instructions</string>
     <string name="recipe_ingredients_subtitle">Ingredients</string>
+    <string name="favorite_title">My Favorite</string>
+    <string name="favorite_add">Add to favorite</string>
+    <string name="favorite_del">Remove from favorite</string>
+    <string name="navigation_drawer_open">Ouvrir le menu</string>
+    <string name="navigation_drawer_close">Fermer le menu</string>
+    <string name="nav_home">Accueil</string>
+    <string name="nav_favorites">Mes favoris</string>
+
 </resources>

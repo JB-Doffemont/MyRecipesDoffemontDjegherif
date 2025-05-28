@@ -2,4 +2,47 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="ic_favorite_normal">#A4A4A4</color>
+    <color name="ic_favorite_selected">#F04E46</color>
+    <!--              Thème Clair (Light)              -->
+    <!-- Couleur principale de la toolbar et majorité des AppBar -->
+    <color name="colorPrimary">#673AB7</color>
+    <!-- Variante un peu plus foncée quand on met l’app en full-screen (status bar) -->
+    <color name="colorPrimaryDark">#512DA8</color>
+    <!-- Couleur des accents (boutons flottants, sélections, etc.) -->
+    <color name="colorAccent">#FFC107</color>
+    <!-- Texte et icônes sur primary -->
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <!-- Fond principal des écrans (fait ressortir le violet) -->
+    <color name="colorBackground">#FAFAFA</color>
+    <!-- Texte principal sur fond clair -->
+    <color name="colorOnBackground">#212121</color>
+    <!-- Surface des cartes, dialogs, etc. -->
+    <color name="colorSurface">#FFFFFF</color>
+    <!-- Texte secondaire, hint, etc. -->
+    <color name="colorOnSurface">#757575</color>
+
+    <!-- (optionnel) Couleurs d’erreur -->
+    <color name="colorError">#B00020</color>
+    <color name="colorOnError">#FFFFFF</color>
+
+
+    <!--               Thème Sombre (Dark)              -->
+    <!-- reprend la même palette en dégradé plus sombre -->
+    <color name="dark_colorPrimary">#512DA8</color>
+    <color name="dark_colorPrimaryDark">#311B92</color>
+    <color name="dark_colorAccent">#FFAB00</color>
+    <color name="dark_colorOnPrimary">#FFFFFF</color>
+
+    <!-- Fond général sombre -->
+    <color name="dark_colorBackground">#121212</color>
+    <color name="dark_colorOnBackground">#E0E0E0</color>
+
+    <!-- Surface des composants (cards, sheets...) -->
+    <color name="dark_colorSurface">#1E1E1E</color>
+    <color name="dark_colorOnSurface">#E0E0E0</color>
+
+    <!-- Erreur adaptée au sombre -->
+    <color name="dark_colorError">#CF6679</color>
+    <color name="dark_colorOnError">#000000</color>
 </resources>
