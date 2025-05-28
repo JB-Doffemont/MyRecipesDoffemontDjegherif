@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="ic_favorite_normal">#A4A4A4</color>
+    <color name="ic_favorite_selected">#F04E46</color>
 </resources>

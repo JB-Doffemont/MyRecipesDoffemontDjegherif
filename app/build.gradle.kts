@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    kotlin("kapt")
 }
 
 android {
@@ -41,6 +42,7 @@ android {
 }
 
 dependencies {
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -51,11 +53,27 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
 
-    // OkHttp Logging
+    // HTTP Logger
     implementation(libs.logging.interceptor)
 
-    //Image
+    // Picasso
     implementation(libs.picasso)
+
+    // WOrk Manager
+    implementation(libs.androidx.work.runtime.ktx)
+    implementation(libs.androidx.legacy.support.v4)
+
+    // Fragment + LifeCycle
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.fragment.ktx)
+
+    // Room
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.core.ktx)
+    kapt(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.testing)
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
