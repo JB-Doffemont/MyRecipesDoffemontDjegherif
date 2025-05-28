@@ -1,7 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.MyRecipesDoffemontDjegherif" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/dark_colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/dark_colorPrimaryDark</item>
+        <item name="colorSecondary">@color/dark_colorAccent</item>
+        <item name="android:statusBarColor">@color/dark_colorPrimaryDark</item>
+        <item name="android:navigationBarColor">@color/dark_colorPrimaryDark</item>
+        <item name="android:windowBackground">@color/dark_colorBackground</item>
     </style>
 </resources>

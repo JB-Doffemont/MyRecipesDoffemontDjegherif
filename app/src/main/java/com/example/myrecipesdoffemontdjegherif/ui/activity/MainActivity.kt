@@ -1,5 +1,6 @@
 package com.example.myrecipesdoffemontdjegherif.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -49,7 +50,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.nav_favorites -> {
                     Toast.makeText(this, "Mes favoris", Toast.LENGTH_SHORT).show()
-                    // startActivity(Intent(this, FavoriteActivity::class.java))
+                    startActivity(Intent(this, FavoriteActivity::class.java))
                 }
             }
             binding.mainDrawerLayout.closeDrawer(GravityCompat.START)
