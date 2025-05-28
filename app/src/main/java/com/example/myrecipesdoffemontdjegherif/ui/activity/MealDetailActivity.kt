@@ -1,9 +1,13 @@
 package com.example.myrecipesdoffemontdjegherif.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import androidx.activity.viewModels
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import com.example.myrecipesdoffemontdjegherif.MyRecipesApplication
 import com.example.myrecipesdoffemontdjegherif.R
 import com.example.myrecipesdoffemontdjegherif.data.db.FavoriteEntity
@@ -13,6 +17,7 @@ import com.example.myrecipesdoffemontdjegherif.data.remote.ApiClient
 import com.example.myrecipesdoffemontdjegherif.databinding.ActivityMealDetailBinding
 import com.example.myrecipesdoffemontdjegherif.data.model.FavoriteViewModel
 import com.example.myrecipesdoffemontdjegherif.data.model.FavoriteViewModelFactory
+import com.google.android.material.navigation.NavigationView
 import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
@@ -22,6 +27,7 @@ class MealDetailActivity : AppCompatActivity() {
 
     private val LOGTAG = MealDetailActivity::class.simpleName
     private lateinit var binding: ActivityMealDetailBinding
+    private lateinit var drawerToggle: ActionBarDrawerToggle
 
     private val favoriteViewModel: FavoriteViewModel by viewModels {
         FavoriteViewModelFactory((application as MyRecipesApplication).favoriteDAO)
@@ -32,9 +38,41 @@ class MealDetailActivity : AppCompatActivity() {
         binding = ActivityMealDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // --- Configuration du toolbar + drawer ---
+        setSupportActionBar(binding.toolbarMealDetailTitle)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeButtonEnabled(true)
+
+        val drawerLayout = findViewById<DrawerLayout>(R.id.meal_detail_drawer_layout)
+        val navView     = findViewById<NavigationView>(R.id.nav_view)
+
+        drawerToggle = ActionBarDrawerToggle(
+            this,
+            drawerLayout,
+            binding.toolbarMealDetailTitle,
+            R.string.navigation_drawer_open,    // à définir dans strings.xml
+            R.string.navigation_drawer_close
+        )
+        drawerLayout.addDrawerListener(drawerToggle)
+        drawerToggle.syncState()
+
+        navView.setNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.nav_main -> {
+                    // ex: revenir à l'accueil
+                    startActivity(Intent(this, MainActivity::class.java))
+                }
+                R.id.nav_favorites -> {
+                    startActivity(Intent(this, FavoriteActivity::class.java))
+                }
+            }
+            drawerLayout.closeDrawers()
+            true
+        }
+
         val mealId = intent.getStringExtra("meal_id")
 
-        supportActionBar?.title = "Meal #$mealId"
+
 
         if (mealId != null) {
             ApiClient.apiService.getMealById(mealId).enqueue(object : Callback<MealResponse> {
@@ -60,6 +98,7 @@ class MealDetailActivity : AppCompatActivity() {
         binding.textMealName.text = meal.strMeal
         binding.textMealCategoryOrigin.text = "${meal.strCategory} - ${meal.strArea}"
         binding.textMealInstructions.text = meal.strInstructions
+        supportActionBar?.title = meal.strMeal
 
         Picasso.get().load(meal.strMealThumb).into(binding.imageMealDetail)
 
@@ -124,5 +163,11 @@ class MealDetailActivity : AppCompatActivity() {
             }
         }
         return ingredients
+    }
+
+    // Nécessaire pour que le toggle réagisse
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (drawerToggle.onOptionsItemSelected(item)) return true
+        return super.onOptionsItemSelected(item)
     }
 }
