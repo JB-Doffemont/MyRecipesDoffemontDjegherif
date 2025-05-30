@@ -105,6 +105,10 @@ class MealDetailActivity : AppCompatActivity() {
         val ingredients = getIngredientList(meal)
         binding.textMealIngredients.text = ingredients.joinToString("\n")
 
+        val nutriScore = (0..100).random()
+        binding.nutriScoreView.setScore(nutriScore)
+
+
         val mealIdInt = meal.idMeal?.toIntOrNull() ?: return
         val imageUrl = meal.strMealThumb
         val title = meal.strMeal

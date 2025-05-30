@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">MyRecipesDoffemontDjegherif</string>
     <string name="category_name">Category name</string>
+    <string name="nutriscore_title">Nutriscore</string>
     <string name="recipe_name">Recipe name</string>
     <string name="recipe_origin">Recipe origin</string>
     <string name="recipe_instructions">Recipe instructions</string>
