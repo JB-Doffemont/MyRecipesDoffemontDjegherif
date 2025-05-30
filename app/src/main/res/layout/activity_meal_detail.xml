@@ -26,7 +26,32 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageMealDetail" />
+        app:layout_constraintTop_toBottomOf="@+id/imageMealDetail" app:layout_constraintBottom_toTopOf="@+id/nutriScoreTitle"/>
+
+    <TextView
+        android:id="@+id/nutriScoreTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/nutriscore_title"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textMealName"
+        app:layout_constraintBottom_toTopOf="@+id/nutriScoreView"/>
+
+    <com.example.myrecipesdoffemontdjegherif.ui.custom.NutriScoreView
+        android:id="@+id/nutriScoreView"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textMealName"
+        app:layout_constraintBottom_toTopOf="@id/textSubtitleOrigin"/>
+
 
     <TextView
         android:id="@+id/textSubtitleOrigin"
@@ -38,7 +63,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textMealName"
+        app:layout_constraintTop_toBottomOf="@+id/nutriScoreView"
         app:layout_constraintBottom_toTopOf="@+id/textMealCategoryOrigin" />
 
     <TextView

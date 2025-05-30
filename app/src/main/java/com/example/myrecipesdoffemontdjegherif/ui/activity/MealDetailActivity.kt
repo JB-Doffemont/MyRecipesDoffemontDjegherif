@@ -38,6 +38,10 @@ class MealDetailActivity : AppCompatActivity() {
 
                             val ingredients = getIngredientList(meal)
                             binding.textMealIngredients.text = ingredients.joinToString("\n")
+
+                            val nutriScore = (0..100).random()
+                            binding.nutriScoreView.setScore(nutriScore)
+
                         }
                     } else {
                         Log.e("DETAIL", "Erreur HTTP : ${response.code()}")
